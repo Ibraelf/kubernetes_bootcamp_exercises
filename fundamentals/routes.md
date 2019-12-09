@@ -116,6 +116,8 @@ spec:
 
 {% hint style="info" %}
 On digital Ocean, the Nginx Ingress Controller must be deployed explicitly:
+{% code-tabs %}
+{% code-tabs-item title="~/data/routes/01\_nginx_controller.yaml" %}
 ```yaml
 ---
 # Source: nginx-ingress/templates/serviceaccount.yaml
