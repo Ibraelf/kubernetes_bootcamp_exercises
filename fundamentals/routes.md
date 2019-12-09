@@ -114,7 +114,6 @@ spec:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-{% hint style="info" %}
 On digital Ocean, the Nginx Ingress Controller must be deployed explicitly:
 {% code-tabs %}
 {% code-tabs-item title="~/data/routes/01\_nginx_controller.yaml" %}
@@ -493,10 +492,6 @@ To retrieve the external-ip of the nginx ingress controller:
 ```bash
 kubectl get services -o wide nginx-ingress-controller-controller
 ```
-
-
-
-{% endhint %}
 
 Expose each on of the Deployment on port 80.
 
