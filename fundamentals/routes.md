@@ -486,6 +486,8 @@ spec:
       terminationGracePeriodSeconds: 60
 
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 To retrieve the external-ip of the nginx ingress controller:
 
 ```bash
