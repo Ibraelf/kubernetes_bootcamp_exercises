@@ -484,6 +484,14 @@ spec:
       terminationGracePeriodSeconds: 60
 
 ```
+To retrieve the external-ip of the nginx ingress controller:
+
+```bash
+kubectl get services -o wide nginx-ingress-controller-controller
+```
+
+
+
 {% endhint %}
 
 Expose each on of the Deployment on port 80.
