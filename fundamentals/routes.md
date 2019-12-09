@@ -114,7 +114,7 @@ spec:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-On digital Ocean, the Nginx Ingress Controller must be deployed explicitly:
+On Digital Ocean, the Nginx Ingress Controller must be deployed explicitly:
 {% code-tabs %}
 {% code-tabs-item title="~/data/routes/01\_nginx_controller.yaml" %}
 ```yaml
