@@ -479,7 +479,7 @@ The file developed has to be stored in this directory : ~`/data/votingapp/03_dep
 Delete the previous ReplicaSet created.
 
 ```bash
-kubectl delete -f ~/data/votingapp/02_replicaset/replicaset.yaml
+kubectl delete -f ~/data/votingapp/02_replicas/replicaset.yaml
 ```
 
 Example of Deployment yaml file to easily manage each part of the Voting App in a single file definition.

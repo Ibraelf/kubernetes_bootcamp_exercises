@@ -68,7 +68,7 @@ Create a Secret called myfirstsecret in command line from a literal value to enc
 kubectl create secret generic myfirstsecret --from-literal=password=myclearpassword
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This method is not recommended in production. It is recommended to version the Secrets files in a sources repository to manage it with a CI/CD tool.
 {% endhint %}
 

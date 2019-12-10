@@ -343,7 +343,7 @@ An example of yaml definition file to manage the Pods access with Services resou
 ```yaml
 apiVersion: v1
 kind: Service
-metadata:
+metadata:
   name: db
   namespace: voting-app
 spec:

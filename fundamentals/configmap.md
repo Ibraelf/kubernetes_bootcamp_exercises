@@ -364,7 +364,7 @@ With this method, the data of a ConfigMap is directly connected as a Volume to a
 
 As the previous method, the content of a ConfigMap can entirely be copied in the specific file or only some specific keys can be defined to be available in the specific path.
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Be careful in the path used to mount the volumes, if a file already exist, it will be erased to mount the ConfigMap Volume.
 {% endhint %}
 
