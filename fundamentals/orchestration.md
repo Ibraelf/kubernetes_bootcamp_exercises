@@ -122,7 +122,7 @@ kubectl <ACTION> <OBJECT>
 
 #### Operations
 
-Here is an exhaustive [list of actions](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete) that can be done :
+Here is an exhaustive [list of actions](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) that can be done :
 
 | Operation | Description |
 | :--- | :--- |
@@ -166,7 +166,7 @@ Here is an exhaustive [list of actions](https://kubernetes.io/docs/reference/gen
 
 #### Resource types
 
-Here is an exhaustive list of [Kubernetes objects](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.12/) that can be managed :
+Here is an exhaustive list of [Kubernetes objects](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.16/) that can be managed :
 
 | Resource type | Abbreviated alias |
 | :--- | :--- |
@@ -305,6 +305,7 @@ Get each elements deployed in the cluster in command line.
 {% tab title="Command" %}
 ```bash
 kubectl get all --all-namespaces
+kubectl get all -A
 ```
 {% endtab %}
 
@@ -737,11 +738,11 @@ No resource limits.
 
 Delete the namespace named "_another-demo_".
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Be careful on the deletion of an object in Kubernetes, there is no rollback.
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="danger" %}
  Be careful on namespace deletion, each objects deployed within it will be deleted too.
 {% endhint %}
 
