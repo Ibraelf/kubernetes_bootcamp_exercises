@@ -553,7 +553,7 @@ The file developed has to be stored in this directory : `~/data/votingapp/07_vol
 Create the directory needed to store the data of the database Pods.
 
 ```bash
-mkdir -p ~/data/votingapp/07_volumes/database/data
+mkdir -p /data/votingapp/07_volumes/database/data
 ```
 
 Create a PersistentVolume based on this local path.
@@ -575,7 +575,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/data/votingapp/07_volumes/database/data"
+    path: "/data/votingapp/07_volumes/database/data"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

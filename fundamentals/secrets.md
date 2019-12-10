@@ -303,7 +303,7 @@ Get the volume mount information.
 {% tabs %}
 {% tab title="Command" %}
 ```bash
-kubectl exec -it myfirstsecretfile cat ~/data/sensitive/myapp/my-password
+kubectl exec -it myfirstsecretfile cat /data/sensitive/myapp/my-password
 ```
 {% endtab %}
 
