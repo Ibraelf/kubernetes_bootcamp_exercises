@@ -184,7 +184,7 @@ The file developed has to be stored in this directory : `~/data/votingapp/13_hig
 {% tab title="Solution" %}
 
 
-Create a 2 PersistentVolume based on this local path.
+Create 2 PersistentVolume used after by redis and db.
 
 {% code-tabs %}
 {% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume-1g-1.yaml" %}
