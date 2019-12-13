@@ -167,28 +167,6 @@ Based on the principles explain in this module, try by your own to handle this s
 
 The file developed has to be stored in this directory : `~/data/votingapp/13_highavailability`
 
-{% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_a.yaml" %}
-```yaml
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: persistentvolume-1g-a
-  namespace: voting-app
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "~/data/votingapp/13_highavailability/pv-1g-a/data"
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
 {% tabs %}
 {% tab title="Exercise" %}
 1. Update the database Deployment to :
