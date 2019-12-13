@@ -338,7 +338,7 @@ spec:
       volumes:
         - name: db-data
           persistentVolumeClaim:
-          claimName: db
+            claimName: db
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -395,7 +395,7 @@ spec:
       volumes:
         - name: redis-data
           persistentVolumeClaim:
-          claimName: redis
+            claimName: redis
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
