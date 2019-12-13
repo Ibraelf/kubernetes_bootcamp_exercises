@@ -186,12 +186,12 @@ The file developed has to be stored in this directory : `~/data/votingapp/13_hig
 Create 2 PersistentVolumes used after by redis and db.
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_1.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_a.yaml" %}
 ```yaml
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: persistentvolume-1g-1
+  name: persistentvolume-1g-a
   namespace: voting-app
   labels:
     type: local
@@ -202,18 +202,18 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/data/votingapp/13_highavailability/pv-1g-1/data"
+    path: "~/data/votingapp/13_highavailability/pv-1g-a/data"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_2.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_b.yaml" %}
 ```yaml
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: persistentvolume-1g-2
+  name: persistentvolume-1g-b
   namespace: voting-app
   labels:
     type: local
@@ -224,7 +224,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/data/votingapp/13_highavailability/pv-1g-2/data"
+    path: "~/data/votingapp/13_highavailability/pv-1g-b/data"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
