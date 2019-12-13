@@ -182,6 +182,94 @@ The file developed has to be stored in this directory : `~/data/votingapp/13_hig
 {% endtab %}
 
 {% tab title="Solution" %}
+
+
+Create a 2 PersistentVolume based on this local path.
+
+{% code-tabs %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume-1g-1.yaml" %}
+```yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: persistentvolume-1g-1
+  namespace: voting-app
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "~/data/votingapp/13_highavailability/pv-1g-1/data"
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume-1g-2.yaml" %}
+```yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: persistentvolume-1g-2
+  namespace: voting-app
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "~/data/votingapp/13_highavailability/pv-1g-2/data"
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Create 2 PersistentVolumeClaims for db and redis based on the 2 previous PersistentVolumes.
+
+{% code-tabs %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim-db.yaml" %}
+```yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: db
+  namespace: voting-app
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim-redis.yaml" %}
+```yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: redis
+  namespace: voting-app
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 Update the database Deployment yaml file definition.
 
 {% code-tabs %}
@@ -426,7 +514,7 @@ spec:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Update the each Deployment based on the previous yaml files.
+Create PV and PVC needed and update the each Deployment based on the previous yaml files.
 
 ```bash
 kubectl apply -f /data/votingapp/13_highavailability/

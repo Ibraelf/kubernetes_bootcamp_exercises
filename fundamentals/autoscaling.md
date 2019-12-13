@@ -58,7 +58,7 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=3 --max=10
 #### Exercise n°2
 
 1. Run a sample nginx application exposing port 8080
-2. Create an Horizontal Pod Autoscaler to automatically scale the Deployment if the memory is above 50%.
+2. Create an Horizontal Pod Autoscaler to automatically scale the Deployment if the memory is above 80%.
 
 ```bash
 kubectl run nginx --image=nginx --requests=memory=500m --limits=memory=1G --expose --port=8080
