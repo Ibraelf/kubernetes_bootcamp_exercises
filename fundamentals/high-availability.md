@@ -232,7 +232,7 @@ spec:
 Create 2 PersistentVolumeClaims for db and redis based on the 2 previous PersistentVolumes.
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim-db.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim\_db.yaml" %}
 ```yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -251,7 +251,7 @@ spec:
 {% endcode-tabs %}
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim-redis.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolumeclaim\_redis.yaml" %}
 ```yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
