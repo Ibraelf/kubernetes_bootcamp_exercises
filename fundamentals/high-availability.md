@@ -183,11 +183,10 @@ The file developed has to be stored in this directory : `~/data/votingapp/13_hig
 
 {% tab title="Solution" %}
 
-
-Create 2 PersistentVolume used after by redis and db.
+Create 2 PersistentVolumes used after by redis and db.
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume-1g-1.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_1.yaml" %}
 ```yaml
 kind: PersistentVolume
 apiVersion: v1
@@ -209,7 +208,7 @@ spec:
 {% endcode-tabs %}
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume-1g-2.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/persistentvolume\_1g\_2.yaml" %}
 ```yaml
 kind: PersistentVolume
 apiVersion: v1
@@ -457,7 +456,7 @@ spec:
 Update the result Deployment yaml file definition.
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/votingapp/1\#\_highavailability/deployment\_result.yaml" %}
+{% code-tabs-item title="~/data/votingapp/13\_highavailability/deployment\_result.yaml" %}
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
