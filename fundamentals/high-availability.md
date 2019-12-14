@@ -201,7 +201,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/data/votingapp/13_highavailability/pv-1g-a/data"
+    path: "/data/votingapp/13_highavailability/pv-1g-a/data"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -223,7 +223,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "~/data/votingapp/13_highavailability/pv-1g-b/data"
+    path: "/data/votingapp/13_highavailability/pv-1g-b/data"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -297,19 +297,19 @@ spec:
         - env:
             - name: "POSTGRES_DB"
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: db
-                  key: database-name
+                  key: POSTGRES_DB
             - name: "POSTGRES_USER"
               valueFrom:
                 secretKeyRef:
                   name: db
-                  key: database-user
+                  key: POSTGRES_USER
             - name: "POSTGRES_PASSWORD"
               valueFrom:
                 secretKeyRef:
                   name: db
-                  key: database-password
+                  key: POSTGRES_PASSWORD
           image: postgres:10.4
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -482,18 +482,18 @@ spec:
             - name: "POSTGRES_DB"
               valueFrom:
                 secretKeyRef:
-                  key: database-name
                   name: db
-            - name: "POSTGRES_USERNAME"
+                  key: POSTGRES_DB
+            - name: "POSTGRES_USER"
               valueFrom:
                 secretKeyRef:
-                  key: database-user
                   name: db
+                  key: POSTGRES_USER
             - name: "POSTGRES_PASSWORD"
               valueFrom:
                 secretKeyRef:
-                  key: database-password
                   name: db
+                  key: POSTGRES_PASSWORD
             - name: "PORT"
               value: "8080"
           image: wikitops/examplevotingapp-result:1.1
