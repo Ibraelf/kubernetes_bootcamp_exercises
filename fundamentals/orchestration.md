@@ -38,6 +38,7 @@ There are a few methods to install kubectl, here are the basics depending on the
 
 {% tabs %}
 {% tab title="Debian / Ubuntu" %}
+
 ```bash
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -45,9 +46,11 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt-get update
 sudo apt-get install -y kubectl
 ```
+
 {% endtab %}
 
 {% tab title="CentOS / RedHat" %}
+
 ```text
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -60,9 +63,11 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 EOF
 yum install -y kubectl
 ```
+
 {% endtab %}
 
 {% tab title="MacOS" %}
+
 #### From Brew
 
 ```bash
@@ -81,9 +86,23 @@ chmod +x ./kubectl
 # Move the binary to the PATH 
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
+
 {% endtab %}
 
 {% tab title="Windows" %}
+
+#### From Powershell
+
+Execute the installation commands (specify the DownloadLocation)
+
+```bash
+Install-Script -Name install-kubectl -Scope CurrentUser -Force
+install-kubectl.ps1 [-DownloadLocation <path>]
+```
+
+The installation program creates $HOME/.kube which is followed by the creation of a configuration file.
+Replace the configuration file with your own.
+
 #### From Chocolatey
 
 ```bash
@@ -93,10 +112,37 @@ choco install kubernetes-cli
 #### From binary
 
 ```bash
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/windows/amd64/kubectl.exe
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/windows/amd64/kubectl.exe
 ```
 
 Add the EXE binary to the PATH.
+
+Access your personal directory:
+
+```bash
+cd %USERPROFILE%
+```
+
+Create the .kube directory:
+
+```bash
+mkdir .kube
+```
+
+Go to the .kube directory you just created:
+
+```bash
+cd .kube
+```
+
+Copy the kubeconfig file into this directory and name it config.
+
+Test to make sure the version you have installed is up to date:
+
+```bash
+kubectl version
+```
+
 {% endtab %}
 {% endtabs %}
 
