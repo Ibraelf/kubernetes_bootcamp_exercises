@@ -202,8 +202,8 @@ subjects:
 - kind: ServiceAccount
   name: metrics-server
   namespace: kube-system
-
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 

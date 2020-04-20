@@ -31,8 +31,8 @@ mkdir ~/data/volumes
 
 On-disk files in a container are ephemeral, which presents some problems for non-trivial applications when running in containers :
 
-* When a container crashes, they will automatically restart but the files will be lost. The container starts with a clean state. 
-* When running containers together in a Pod it is often necessary to share files between those containers. 
+* When a container crashes, they will automatically restart but the files will be lost. The container starts with a clean state.
+* When running containers together in a Pod it is often necessary to share files between those containers.
 
 The Kubernetes Volume abstraction solves both of these problems.
 
@@ -44,7 +44,7 @@ The _create_ command can create a PersistentVolume / PersistentVolumeClaim objec
 
 ### EmptyDir
 
-An EmptyDir Volume, as the name says, attach an empty volume to all the containers in a single Pods. 
+An EmptyDir Volume, as the name says, attach an empty volume to all the containers in a single Pod.
 
 Containers in the Pod can all read and write the same files in the emptyDir volume, though that volume can be mounted at the same or different paths in each Container. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted forever.
 
