@@ -30,7 +30,7 @@ mkdir ~/data/routes
 This module needs an Ingress controller to be deployed on the cluster. The default Ingress controller used in this module is Nginx. Ensure this module is up and running before continuing.
 {% endhint %}
 
-## Create
+## Deploy Ingress Controller
 
 Ingress exposes HTTP and HTTPS routes from outside the cluster to Services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
 
@@ -48,9 +48,9 @@ In order for the ingress resource to work, the cluster must have an ingress cont
 | Nginx | Offers support and maintenance for the NGINX Ingress Controller for Kubernetes. |
 | Traefik | Fully featured ingress controller \(Let’s Encrypt, secrets, http2, websocket\), and it also comes with commercial support by Containous. |
 
-The _create_ command can create a Ingress object based on a yaml file definition.
+#### On Minikube
 
-#### Exercise n°1
+On Minikube, simply enalbe addon
 
 {% hint style="info" %}
 On Minikube, ensure that the ingress addons is enable before continuing :
@@ -60,7 +60,9 @@ minikube addons enable ingress
 ```
 {% endhint %}
 
-First, deploy two static website in two different deployments. Then, expose each one on the port 80.
+#### On Digital Ocean
+
+On Digital Ocean, deploy necessary resources for NGINX Ingress Controller
 
 {% code-tabs %}
 {% code-tabs-item title="~/data/routes/01\_deployments.yaml" %}
@@ -492,6 +494,14 @@ To retrieve the external-ip of the nginx ingress controller:
 ```bash
 kubectl get services -o wide nginx-ingress-controller-controller
 ```
+
+## Create
+
+The _create_ command can create a Ingress object based on a yaml file definition.
+
+First, deploy two static website in two different deployments. Then, expose each one on the port 80.
+
+#### Exercise n°1
 
 Expose each on of the Deployment on port 80.
 
