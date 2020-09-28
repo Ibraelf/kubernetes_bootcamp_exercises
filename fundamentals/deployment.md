@@ -76,7 +76,7 @@ spec:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/deployment/01_deployment.yaml
+kubectl apply  -f data/deployment/01_deployment.yaml
 ```
 
 #### Exercise n°3
@@ -126,7 +126,7 @@ spec:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/deployment/02_deployment.yaml
+kubectl apply  -f data/deployment/02_deployment.yaml
 ```
 
 ## Get
@@ -659,7 +659,7 @@ spec:
 Run the command to create the Deployments.
 
 ```bash
-kubectl create -f ~/data/votingapp/03_deployments/deployment.yaml
+kubectl apply  -f data/votingapp/03_deployments/deployment.yaml
 ```
 
 Ensure the objects have been created.

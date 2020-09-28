@@ -67,7 +67,7 @@ spec:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/replicaset/01_replicaset.yaml
+kubectl apply  -f data/replicaset/01_replicaset.yaml
 ```
 
 ## Get
@@ -393,7 +393,7 @@ spec:
 Kubectl command to deploy the Pods based on the previous definition file.
 
 ```text
-kubectl create -f ~/data/votingapp/02_replicas/replicaset.yaml
+kubectl apply  -f data/votingapp/02_replicas/replicaset.yaml
 ```
 
 Ensure the Pods is up and running.

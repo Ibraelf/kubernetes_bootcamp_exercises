@@ -408,7 +408,7 @@ spec:
 Create the Services resources based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/votingapp/04_services/services.yaml
+kubectl apply  -f data/votingapp/04_services/services.yaml
 ```
 {% endtab %}
 {% endtabs %}

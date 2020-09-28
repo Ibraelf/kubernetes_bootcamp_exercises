@@ -126,7 +126,7 @@ spec:
 Create the resources based on the previous yaml files definition.
 
 ```bash
-kubectl create -f ~/data/servicediscovery/
+kubectl apply  -f data/servicediscovery/
 ```
 
 {% hint style="info" %}

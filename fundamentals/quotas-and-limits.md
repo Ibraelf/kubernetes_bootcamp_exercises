@@ -61,7 +61,7 @@ spec:
 Create the object based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/quotas/resourcequota.yaml
+kubectl apply  -f data/quotas/resourcequota.yaml
 ```
 
 ### LimitRange
@@ -103,7 +103,7 @@ spec:
 Create the object based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/limits/limitrange.yaml
+kubectl apply  -f data/limits/limitrange.yaml
 ```
 
 ## Get
@@ -402,7 +402,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/votingapp/09_quotas/quotas.yaml
+kubectl apply  -f data/votingapp/09_quotas/quotas.yaml
 ```
 {% endtab %}
 {% endtabs %}

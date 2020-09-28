@@ -78,7 +78,7 @@ spec:
 Create the resource based on the previous yaml definition file.
 
 ```bash
-kubectl create -f ~/data/volumes/01_pods.yaml
+kubectl apply  -f data/volumes/01_pods.yaml
 ```
 
 ### PersistentVolume
@@ -117,7 +117,7 @@ spec:
 Create the resource based on the previous yaml definition file.
 
 ```bash
-kubectl create -f ~/data/volumes/02_hostpath.yaml
+kubectl apply  -f data/volumes/02_hostpath.yaml
 ```
 
 ## Claim
@@ -149,7 +149,7 @@ spec:
 Create the resource based on the previous yaml definition file.
 
 ```bash
-kubectl create -f ~/data/volumes/03_persistentvolumeclaim.yaml
+kubectl apply  -f data/volumes/03_persistentvolumeclaim.yaml
 ```
 
 ## Attach
@@ -187,7 +187,7 @@ spec:
 Create the resource based on the previous yaml definition file.
 
 ```bash
-kubectl create -f ~/data/volumes/04_pods.yaml
+kubectl apply  -f data/volumes/04_pods.yaml
 ```
 
 ## Get
@@ -583,7 +583,7 @@ spec:
 Create the PersistentVolume based on the yaml file.
 
 ```bash
-kubectl create -f ~/data/votingapp/07_volumes/persistentvolume.yaml
+kubectl apply  -f data/votingapp/07_volumes/persistentvolume.yaml
 ```
 
 Create a PersistentVolumeClaim based on the previous PersistentVolume.
@@ -610,7 +610,7 @@ spec:
 Create the PersistentVolumeClaim based on the yaml file.
 
 ```bash
-kubectl create -f ~/data/votingapp/07_volumes/persistentvolumeclaim.yaml
+kubectl apply  -f data/votingapp/07_volumes/persistentvolumeclaim.yaml
 ```
 
 Update the database Deployment to attach the PersistentVolumeClaim and persist data.

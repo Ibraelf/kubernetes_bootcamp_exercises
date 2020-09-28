@@ -643,7 +643,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/votingapp/10_autoscaling/hpa.yaml
+kubectl apply data/votingapp/10_autoscaling/hpa.yaml
 ```
 {% endtab %}
 {% endtabs %}

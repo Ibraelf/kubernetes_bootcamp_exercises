@@ -70,7 +70,7 @@ spec:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/pods/01_pods.yaml
+kubectl apply  -f data/pods/01_pods.yaml
 ```
 
 #### Exercise n°2
@@ -99,7 +99,7 @@ spec:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/pods/02_pods.yaml
+kubectl apply  -f data/pods/02_pods.yaml
 ```
 
 ## Apply
@@ -299,7 +299,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/pods/04_pods.yaml
+kubectl apply  -f data/pods/04_pods.yaml
 ```
 
 Get the logs of the busybox-logs Pod created previously.
@@ -776,7 +776,7 @@ spec:
 Kubectl command to deploy the Pods based on the previous definition file.
 
 ```bash
-kubectl create -f ~/data/votingapp/01_pods/pods.yaml
+kubectl apply  -f data/votingapp/01_pods/pods.yaml
 ```
 
 Ensure the Pods are created.

@@ -54,7 +54,7 @@ metadata:
 Create a resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/serviceaccount/01_sa.yaml
+kubectl apply  -f data/serviceaccount/01_sa.yaml
 ```
 
 ## Get
@@ -340,7 +340,7 @@ spec:
 Create the resources based on the previous yaml files definition.
 
 ```bash
-kubectl create -f ~/data/votingapp/14_serviceaccounts/
+kubectl apply  -f data/votingapp/14_serviceaccounts/
 ```
 {% endtab %}
 {% endtabs %}

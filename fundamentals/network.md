@@ -60,7 +60,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/networks/01_networkpolicy.yaml
+kubectl apply  -f data/networks/01_networkpolicy.yaml
 ```
 
 #### Exercise n°2
@@ -117,7 +117,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/networks/02_networkpolicy.yaml
+kubectl apply  -f data/networks/02_networkpolicy.yaml
 ```
 
 ## Get
@@ -420,7 +420,7 @@ spec:
 Create the NetworkPolicies based on the previous yaml file.
 
 ```bash
-kubectl create -f ~/data/votingapp/11_networks/networkpolicies.yaml
+kubectl apply  -f data/votingapp/11_networks/networkpolicies.yaml
 ```
 {% endtab %}
 {% endtabs %}

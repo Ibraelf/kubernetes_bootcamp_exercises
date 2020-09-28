@@ -225,13 +225,13 @@ Create a resource from a file or from stdin.
 
 ```bash
 # Create a pod using the data in pod.json.
-kubectl create -f ./pod.json
+kubectl apply -f ./pod.json
 
 # Create a pod based on the JSON passed into stdin.
-cat pod.json | kubectl create -f -
+cat pod.json | kubectl apply -f -
 
 # Edit the data in docker-registry.yaml in JSON using the v1 API format then create the resource using the edited data.
-kubectl create -f docker-registry.yaml --edit --output-version=v1 -o json
+kubectl apply -f docker-registry.yaml --edit --output-version=v1 -o json
 ```
 
 #### Delete

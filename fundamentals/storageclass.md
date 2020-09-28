@@ -55,7 +55,7 @@ volumeBindingMode: Immediate
 Create the resource based on the previous yaml definition file.
 
 ```bash
-kubectl create -f ~/data/storageclass/01_storageclass.yaml
+kubectl apply  -f data/storageclass/01_storageclass.yaml
 ```
 
 ## Get

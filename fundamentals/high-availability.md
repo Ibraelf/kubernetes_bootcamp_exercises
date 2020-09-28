@@ -72,7 +72,7 @@ spec:
 Create a resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/highavailability/01_pods.yaml
+kubectl apply  -f data/highavailability/01_pods.yaml
 ```
 
 ### HTTP Request
@@ -113,7 +113,7 @@ spec:
 Create a resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/highavailability/02_pods.yaml
+kubectl apply  -f data/highavailability/02_pods.yaml
 ```
 
 ### TCP Request
@@ -152,7 +152,7 @@ spec:
 Create a resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/highavailability/03_pods.yaml
+kubectl apply  -f data/highavailability/03_pods.yaml
 ```
 
 ## Module exercise

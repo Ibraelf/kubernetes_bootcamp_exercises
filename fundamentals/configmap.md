@@ -286,7 +286,7 @@ spec:
 Create the Pod to attach the ConfigMap.
 
 ```bash
-kubectl create -f ~/data/configmap/01_pod.yaml
+kubectl apply  -f data/configmap/01_pod.yaml
 ```
 
 Get the logs to ensure the Pods is running and configured.
@@ -334,7 +334,7 @@ spec:
 Create the Pod to attach the ConfigMap.
 
 ```bash
-kubectl create -f ~/data/configmap/02_pod.yaml
+kubectl apply  -f data/configmap/02_pod.yaml
 ```
 
 Get the logs to ensure the Pods is running and configured.
@@ -401,7 +401,7 @@ spec:
 Create the Pod to attach the ConfigMap.
 
 ```bash
-kubectl create -f ~/data/configmap/03_pod.yaml
+kubectl apply  -f data/configmap/03_pod.yaml
 ```
 
 Get the logs to ensure the Pods is running and configured.
@@ -450,7 +450,7 @@ spec:
 Create the Pod to attach the ConfigMap.
 
 ```bash
-kubectl create -f ~/data/configmap/04_pod.yaml
+kubectl apply  -f data/configmap/04_pod.yaml
 ```
 
 Get the logs to ensure the Pods is running and configured.
@@ -647,7 +647,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/votingapp/05_configmaps/deployment.yaml
+kubectl apply  -f data/votingapp/05_configmaps/deployment.yaml
 ```
 {% endtab %}
 {% endtabs %}

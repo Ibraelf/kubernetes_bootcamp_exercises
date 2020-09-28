@@ -752,7 +752,7 @@ metadata:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/orchestration/namespace.yaml
+kubectl apply  -f data/orchestration/namespace.yaml
 ```
 
 #### Exercise n°4

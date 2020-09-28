@@ -122,7 +122,7 @@ data:
 {% endcode-tabs %}
 
 ```bash
-kubectl create -f ~/data/secrets/01_secrets.yaml
+kubectl apply  -f data/secrets/01_secrets.yaml
 ```
 
 ## Get
@@ -237,7 +237,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```bash
-kubectl create -f ~/data/secrets/02_pods.yaml
+kubectl apply  -f data/secrets/02_pods.yaml
 ```
 
 Get the environment variable to ensure the configuration.
@@ -295,7 +295,7 @@ spec:
 Create the resource based on the previous yaml file definition.
 
 ```text
-kubectl create -f ~/data/secrets/03_pods.yaml
+kubectl apply  -f data/secrets/03_pods.yaml
 ```
 
 Get the volume mount information.
@@ -578,7 +578,7 @@ spec:
 Update the current Deployments resources.
 
 ```bash
-kubectl create -f ~/data/votingapp/06_secrets/deployment.yaml
+kubectl apply  -f data/votingapp/06_secrets/deployment.yaml
 ```
 {% endtab %}
 {% endtabs %}

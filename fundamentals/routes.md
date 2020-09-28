@@ -50,7 +50,7 @@ In order for the ingress resource to work, the cluster must have an ingress cont
 
 #### On Minikube
 
-On Minikube, simply enalbe addon
+On Minikube, simply enable addon:
 
 {% hint style="info" %}
 On Minikube, ensure that the ingress addons is enable before continuing :
@@ -62,7 +62,7 @@ minikube addons enable ingress
 
 #### On Digital Ocean
 
-On Digital Ocean, deploy necessary resources for NGINX Ingress Controller
+On Digital Ocean, deploy necessary resources for NGINX Ingress Controller :
 
 {% code-tabs %}
 {% code-tabs-item title="~/data/routes/01\_deployments.yaml" %}
@@ -566,7 +566,7 @@ spec:
 Create each resources based on the previous yaml files definition.
 
 ```bash
-kubectl create -f ~/data/routes/
+kubectl apply  -f data/routes/
 ```
 
 {% hint style="info" %}
@@ -796,7 +796,7 @@ spec:
 Create the yaml file definition to expose the result service.
 
 ```bash
-kubectl create -f ~/data/votingapp/12_routes/routes.yaml
+kubectl apply  -f data/votingapp/12_routes/routes.yaml
 ```
 {% endtab %}
 {% endtabs %}
