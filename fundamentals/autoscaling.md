@@ -207,7 +207,6 @@ subjects:
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-
 ```bash
 kubectl apply -f ~/data/autoscaling/metrics-server/metrics-server.yaml
 ```
@@ -217,8 +216,60 @@ kubectl apply -f ~/data/autoscaling/metrics-server/metrics-server.yaml
 1. Run a sample app based on a webserver to expose it on port 80.
 2. Create an Horizontal Pod Autoscaler to automatically scale the Deployment if the CPU usage is above 50%.
 
+{% code-tabs %}
+{% code-tabs-item title="~/data/autoscaling/01\_php-apache.yaml" %}
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+  labels:
+    app: php-apache
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: php-apache
+  template:
+    metadata:
+      labels:
+        app: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: k8s.gcr.io/hpa-example
+        resources:
+          requests:
+            cpu: "200m"
+          limits:
+            cpu: "300m"
+        ports:
+        - name: php-apache
+          containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+spec:
+  type: ClusterIP
+  selector:
+    app: php-apache
+  ports:
+    - name: php-apache
+      port: 80
+      protocol: TCP
+      targetPort: php-apache
+```
+
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ```bash
-# Run a sample app in the default namespace
+kubectl apply -f data/autoscaling/01_php-apache.yaml
+# version kubectl <1.17
 kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --limits=cpu=300m --expose --port=80
 
 # Create an Horizontal Pod Autoscaler based on the CPU usage
@@ -230,12 +281,66 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=3 --max=10
 1. Run a sample nginx application exposing port 8080
 2. Create an Horizontal Pod Autoscaler to automatically scale the Deployment if the memory is above 80%.
 
+{% code-tabs %}
+{% code-tabs-item title="~/data/autoscaling/02\_deployment.yaml" %}
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        resources:
+          requests:
+            memory: "500Mi"
+          limits:
+            memory: "1Gi"
+        ports:
+        - name: nginx
+          containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx
+  ports:
+    - name: nginx
+      port: 8080
+      protocol: TCP
+      targetPort: nginx
+```
+
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ```bash
+kubectl apply -f data/autoscaling/02_deployment.yaml
+# version kubectl <1.17
 kubectl run nginx --image=nginx --requests=memory=500m --limits=memory=1G --expose --port=8080
 ```
 
 {% code-tabs %}
 {% code-tabs-item title="~/data/autoscaling/01\_hpa.yaml" %}
+
 ```yaml
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
@@ -256,9 +361,13 @@ spec:
         type: Utilization
         averageUtilization: 80
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+```bash
+kubectl apply -f data/autoscaling/01_hpa.yaml
+```
 
 ## Get
 
@@ -280,9 +389,11 @@ Get the current HorizontalPodAutoscaler resources in the default namespace.
 
 {% tabs %}
 {% tab title="Command" %}
+
 ```bash
 kubectl get hpa
 ```
+
 {% endtab %}
 
 {% tab title="CLI Return" %}
@@ -299,6 +410,7 @@ Stress the Pod created in the previous section and check the HorizontalPoMindAut
 
 {% tabs %}
 {% tab title="Command" %}
+
 ```bash
 # Connect to the Pod
 kubectl run -it load-generator --image=busybox /bin/sh

@@ -89,9 +89,9 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx
+    image: nginx:1.14
   - name: postgres
-    image: postgres
+    image: postgres:10.4
   - name: redis
     image: redis
 ```
