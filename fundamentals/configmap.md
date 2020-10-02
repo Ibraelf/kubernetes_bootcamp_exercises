@@ -120,7 +120,7 @@ kubectl create configmap CONFIGMAP_NAME --from-file=KEY_NAME=PATH_TO_FILENAME
 
 #### Exercise n°1
 
-1. Create two properties files in this path : `~/data/configmaps/directory/`
+1. Create two properties files in this path : `~/data/configmap/directory/`
 2. Put some properties in each one
 3. Create a ConfigMap based on the two property files created
 

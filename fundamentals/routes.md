@@ -65,60 +65,8 @@ minikube addons enable ingress
 On Digital Ocean, deploy necessary resources for NGINX Ingress Controller :
 
 {% code-tabs %}
-{% code-tabs-item title="~/data/routes/01\_deployments.yaml" %}
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webserver1
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: webserver1
-  template:
-    metadata:
-      labels:
-        app: webserver1
-    spec:
-      containers:
-      - name: static
-        image: dockersamples/static-site
-        env:
-        - name: AUTHOR
-          value: wikitops1
-        ports:
-        - containerPort: 80
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webserver2
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: webserver2
-  template:
-    metadata:
-      labels:
-        app: webserver2
-    spec:
-      containers:
-      - name: static
-        image: dockersamples/static-site
-        env:
-        - name: AUTHOR
-          value: wikitops2
-        ports:
-        - containerPort: 80
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-On Digital Ocean, the Nginx Ingress Controller must be deployed explicitly:
-{% code-tabs %}
 {% code-tabs-item title="~/data/routes/01\_nginx_controller.yaml" %}
+
 ```yaml
 ---
 # Source: nginx-ingress/templates/serviceaccount.yaml
@@ -128,6 +76,7 @@ metadata:
   labels:
     app: nginx-ingress
   name: nginx-ingress-controller
+  namespace: default  
 ---
 # Source: nginx-ingress/templates/clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -136,6 +85,7 @@ metadata:
   labels:
     app: nginx-ingress
   name: nginx-ingress-controller
+  namespace: default  
 rules:
   - apiGroups:
       - ""
@@ -194,6 +144,7 @@ metadata:
   labels:
     app: nginx-ingress
   name: nginx-ingress-controller
+  namespace: default  
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -210,6 +161,7 @@ metadata:
   labels:
     app: nginx-ingress
   name: nginx-ingress-controller
+  namespace: default
 rules:
   - apiGroups:
       - ""
@@ -291,6 +243,7 @@ metadata:
   labels:
     app: nginx-ingress
   name: nginx-ingress-controller
+  namespace: default  
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -308,6 +261,7 @@ metadata:
     app: nginx-ingress
     component: "controller"
   name: nginx-ingress-controller-controller
+  namespace: default  
 spec:
   clusterIP: ""
   ports:
@@ -332,6 +286,7 @@ metadata:
     app: nginx-ingress
     component: "default-backend"
   name: nginx-ingress-controller-default-backend
+  namespace: default  
 spec:
   clusterIP: ""
   ports:
@@ -352,6 +307,7 @@ metadata:
     app: nginx-ingress
     component: "controller"
   name: nginx-ingress-controller-controller
+  namespace: default  
 spec:
   replicas: 1
   selector:
@@ -438,6 +394,7 @@ metadata:
     app: nginx-ingress
     component: "default-backend"
   name: nginx-ingress-controller-default-backend
+  namespace: default  
 spec:
   replicas: 1
   selector:
@@ -499,9 +456,61 @@ kubectl get services -o wide nginx-ingress-controller-controller
 
 The _create_ command can create a Ingress object based on a yaml file definition.
 
+#### Exercise n°1
+
 First, deploy two static website in two different deployments. Then, expose each one on the port 80.
 
-#### Exercise n°1
+{% code-tabs %}
+{% code-tabs-item title="~/data/routes/01\_deployments.yaml" %}
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webserver1
+  template:
+    metadata:
+      labels:
+        app: webserver1
+    spec:
+      containers:
+      - name: static
+        image: dockersamples/static-site
+        env:
+        - name: AUTHOR
+          value: wikitops1
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webserver2
+  template:
+    metadata:
+      labels:
+        app: webserver2
+    spec:
+      containers:
+      - name: static
+        image: dockersamples/static-site
+        env:
+        - name: AUTHOR
+          value: wikitops2
+        ports:
+        - containerPort: 80
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Expose each on of the Deployment on port 80.
 
