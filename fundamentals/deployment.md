@@ -387,7 +387,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.12.3
+        image: nginx:1.19
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
