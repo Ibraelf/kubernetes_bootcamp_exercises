@@ -64,7 +64,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx
+    image: nginx:1.9
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -118,7 +118,7 @@ Update the image version of the previous nginx pods.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-single-nginx14
+  name: my-single-app
   labels:
     env: formation
 spec:
