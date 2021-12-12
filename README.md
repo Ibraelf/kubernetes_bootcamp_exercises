@@ -60,7 +60,9 @@ Following are the prerequisite skills to attend this course. Since its a beginne
 
 There is a lot of way to trained you to manage a Kubernetes cluster and the resources associated :
 
-* Online with the labs [Play With Kubernetes \(PWK\)](https://labs.play-with-k8s.com/)
+* Online with:
+  * The labs [Play With Kubernetes \(PWK\)](https://labs.play-with-k8s.com/)
+  * The labs [Katacoda](https://www.katacoda.com/courses/kubernetes)
 * Locally on a dedicated cluster deployed on[ Vagrant instances](https://github.com/wikitops/ansible_kubernetes)
 * On a cloud dedicated cluster deployed thanks to [Kubespray](https://github.com/kubernetes-incubator/kubespray)
 * On a single local instance thanks to [Minikube](https://github.com/kubernetes/minikube)
