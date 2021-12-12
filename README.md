@@ -63,8 +63,13 @@ There is a lot of way to trained you to manage a Kubernetes cluster and the reso
 * Online with:
   * The labs [Play With Kubernetes \(PWK\)](https://labs.play-with-k8s.com/)
   * The labs [Katacoda](https://www.katacoda.com/courses/kubernetes)
-* Locally on a dedicated cluster deployed on[ Vagrant instances](https://github.com/wikitops/ansible_kubernetes)
-* On a cloud dedicated cluster deployed thanks to [Kubespray](https://github.com/kubernetes-incubator/kubespray)
+* Locally on a dedicated cluster deployed on: 
+  * [Vagrant instances](https://github.com/wikitops/ansible_kubernetes)
+  * [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+  * [k3d](https://k3d.io/v5.2.1/)
+  * [k0s](https://k0sproject.io)
+* On a public Cloud provider with a managed cluster like [Digital Ocean](https://www.digitalocean.com/products/kubernetes/) or [Scaleway](https://www.scaleway.com/fr/kubernetes-kapsule/)
+* On virtual machines thanks to [Kubespray](https://github.com/kubernetes-incubator/kubespray)
 * On a single local instance thanks to [Minikube](https://github.com/kubernetes/minikube)
 
 ## Where to document
