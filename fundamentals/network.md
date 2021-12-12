@@ -430,4 +430,5 @@ kubectl apply  -f data/votingapp/11_networks/networkpolicies.yaml
 Those documentations can help you to go further in this topic :
 
 * Kubernetes official documentation on [Network Policy](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+* [Kubernetes network plugins (CNI) benchmark](https://itnext.io/benchmark-results-of-kubernetes-network-plugins-cni-over-10gbit-s-network-updated-august-2020-6e1b757b9e49)
 
