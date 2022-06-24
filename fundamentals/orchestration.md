@@ -538,7 +538,7 @@ Extract only the useful information from the default namespace it in a YAML file
 {% tabs %}
 {% tab title="Command" %}
 ```bash
-kubectl get namespace default -o yaml --export
+kubectl get namespace default -o yaml > export.yaml
 ```
 {% endtab %}
 
